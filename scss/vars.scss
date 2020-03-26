@@ -1,2 +1,6 @@
 // Color Scheme for Site (single color, no dark mode switch)
-$main: black;
+$text: #ffffff;
+$background: #3d3d3d;
+$accent: #ffde59;
+$links: darken($accent, 20%);
+$visited: lighten($accent, 10%);

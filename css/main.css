@@ -1,1 +1,28 @@
-/* No CSS */
+*:before, *:after {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+:root :focus {
+  outline: solid 1px #ffffff;
+}
+
+html {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  scroll-behavior: smooth;
+  background: #3d3d3d;
+  color: #ffffff;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  color: #f2c200;
+}
+
+a:visited {
+  color: #ffe88c;
+}

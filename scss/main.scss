@@ -1,1 +1,33 @@
 @import "vars";
+
+* {
+    &:before, &:after {
+        transition: all .3s;
+    }
+}
+
+:root {
+    :focus {
+        outline: solid 1px $text;
+    }
+}
+
+html {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    scroll-behavior: smooth;
+    background: $background;
+    color: $text;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+}
+
+// Fonts
+a {
+    color: $links;
+    &:visited {
+        color: $visited;
+    }
+}
