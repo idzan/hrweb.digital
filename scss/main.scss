@@ -19,9 +19,32 @@ html {
     color: $text;
 }
 
+// Main Styling
 body {
     margin: 0 auto;
     width: 100%;
+    font-size: 1em;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+    width: 100%;
+    grid-area: header;
+    padding: 0.5em 0;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
 }
 
 // Fonts
@@ -29,5 +52,112 @@ a {
     color: $links;
     &:visited {
         color: $visited;
+    }
+}
+
+// Navigation
+.nav {
+    max-width: 1720px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr .75fr auto;
+    gap: 1em;
+    padding: 1em;
+}
+.logo {
+    grid-column: 1;
+}
+nav {
+    grid-column: 3;
+    align-self: center;
+    .item {
+        color: $accent;
+        margin: 1em;
+        padding: 0.25em;
+        text-decoration: none;
+        background-image: linear-gradient($accent, $links);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0% 2px;
+        transition: background-size 500ms ease-in-out;
+        &:hover {
+            background-size: 100% 2px;
+        }
+        &[aria-current] {
+            border-bottom: 1px solid $accent;
+        }
+    }
+}
+#navSwitch, .menu, .menuCheck {
+    display: none;
+}
+.menu {
+    grid-column: 1;
+    align-self: center;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    span, span:before, span:after {
+        position: absolute;
+        width: 2em;
+        height: 4px;
+        background: $text;
+        border-radius: .2em;
+    }
+    span {
+        margin: 0.25em;
+        &:after, &:before {
+            content: '';
+            left: 0;
+        }
+        &:before {
+            top: -8px;
+        }
+        &:after {
+            top: 8px;
+        }
+    }
+}
+.menuCheck {
+    &:checked + .menu:after {
+        content: '';
+    }
+    &:checked + .menu {
+        span {
+            height: 0;
+            width: 0;
+            &:before, &:after {
+                top: 6px;
+            }
+            &:before {
+                transform: rotate(225deg);
+            }
+            &:after {
+                transform: rotate(-225deg);
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .menu {
+        display: inline-block;
+    }
+    nav {
+        display: none;
+    }
+    .logo {
+        display: grid;
+        grid-row: 1;
+        grid-column: 1;
+        margin: 0.25em;
+    }
+    #navSwitch {
+        &:checked ~ nav {
+            display: grid;
+            grid-row: 2;
+            grid-column: 2;
+            align-self: center;
+        }
     }
 }
