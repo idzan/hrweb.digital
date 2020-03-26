@@ -69,6 +69,7 @@ a:visited {
 .logo {
   -ms-grid-column: 1;
   grid-column: 1;
+  width: 10vw;
 }
 
 nav {
@@ -79,7 +80,7 @@ nav {
       align-self: center;
 }
 
-nav .item {
+nav .menuItem {
   color: #ffde59;
   margin: 1em;
   padding: 0.25em;
@@ -93,11 +94,11 @@ nav .item {
   transition: background-size 500ms ease-in-out;
 }
 
-nav .item:hover {
+nav .menuItem:hover {
   background-size: 100% 2px;
 }
 
-nav .item[aria-current] {
+nav .menuItem[aria-current] {
   border-bottom: 1px solid #ffde59;
 }
 
@@ -183,8 +184,8 @@ nav .item[aria-current] {
   #navSwitch:checked ~ nav {
     display: -ms-grid;
     display: grid;
-    -ms-grid-row: 2;
-    grid-row: 2;
+    -ms-grid-row: 3;
+    grid-row: 3;
     -ms-grid-column: 2;
     grid-column: 2;
     -ms-grid-row-align: center;

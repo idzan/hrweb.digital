@@ -66,11 +66,12 @@ a {
 }
 .logo {
     grid-column: 1;
+    width: 10vw;
 }
 nav {
     grid-column: 3;
     align-self: center;
-    .item {
+    .menuItem {
         color: $accent;
         margin: 1em;
         padding: 0.25em;
@@ -155,7 +156,7 @@ nav {
     #navSwitch {
         &:checked ~ nav {
             display: grid;
-            grid-row: 2;
+            grid-row: 3;
             grid-column: 2;
             align-self: center;
         }
