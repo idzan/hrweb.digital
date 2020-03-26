@@ -39,6 +39,14 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: 3em auto;
+      grid-template-rows: 3em auto;
+  line-height: 1.5em;
 }
 
 footer {
@@ -191,4 +199,17 @@ nav .menuItem[aria-current] {
     -ms-grid-row-align: center;
         align-self: center;
   }
+}
+
+.title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-area: 1 / 2 / 1 / 8;
+}
+
+.content {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-area: auto / 2 / auto / 8;
 }

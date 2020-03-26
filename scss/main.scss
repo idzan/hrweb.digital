@@ -41,6 +41,11 @@ header {
 
 main {
     grid-area: main;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 3em auto;
+    line-height: 1.5em;
 }
 
 footer {
@@ -161,4 +166,12 @@ nav {
             align-self: center;
         }
     }
+}
+
+// Content
+.title {
+    grid-area: 1 / 2 / 1 / 8;
+}
+.content {
+    grid-area: auto / 2 / auto / 8;
 }
